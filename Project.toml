@@ -1,0 +1,10 @@
+name = "Io3d"
+uuid = "276a7f50-ef14-5ff6-a3e3-20ef51d5e3d7"
+authors = ["Miroslav Jirik <miroslav.jirik@gmail.com>"]
+version = "0.1.0"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
