@@ -5,3 +5,14 @@
 
 
 Wrapper for pytho `io3d` package.
+
+
+# Install
+
+Install `io3d` for Python. In command line use:
+```bash
+conda install -c mjirik -c conda-forge -c SimpleITK io3d
+
+```
+
+In Julia 

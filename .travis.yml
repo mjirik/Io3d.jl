@@ -12,5 +12,39 @@ matrix:
   fast_finish: true
 notifications:
   email: false
+env:
+#  - CONDA_PYTHON_VERSION=2.7
+  - CONDA_PYTHON_VERSION=3.6
+
+before_install:
+  # We do this conditionally because it saves us some downloading if the
+  # version is the same.
+  - if [[ "$CONDA_PYTHON_VERSION" == "2.7" ]]; then
+    wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
+    else
+    wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+    fi
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  # Useful for debugging any issues with conda
+  - conda info -a
+
+install:
+  - conda config --add channels conda-forge
+  - conda config --add channels SimpleITK
+  - conda config --add channels mjirik
+  # download training data
+  #    - mkdir -p ~/data/medical/orig
+  #    - wget http://home.zcu.cz/~mjirik/lisa/sample-data/io3d_sample_data.zip
+  #    - unzip -d ~/data/medical/orig/ io3d_sample_data.zip
+  # command to install dependencies
+  - conda create --yes -n travis pip nose python=$CONDA_PYTHON_VERSION io3d
+  - source activate travis
+  - export PYTHON=`which python`
+  - julia -e 'using Pkg; Pkg.build("PyCall")'
+
 after_success:
   - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Coveralls.submit(process_folder())'
