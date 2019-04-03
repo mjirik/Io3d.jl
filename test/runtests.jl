@@ -3,6 +3,7 @@ using Test
 
 @testset "Io3d.jl" begin
 
+    @test "nrn4" in Io3d.get_labels()
     Io3d.datasets_download("nrn4")
     pth = Io3d.datasets_join_path("medical/orig/sample-data/nrn4.pklz")
     @test length(pth) > 0
