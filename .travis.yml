@@ -41,7 +41,7 @@ install:
   #    - wget http://home.zcu.cz/~mjirik/lisa/sample-data/io3d_sample_data.zip
   #    - unzip -d ~/data/medical/orig/ io3d_sample_data.zip
   # command to install dependencies
-  - conda create --yes -n travis pip nose python=$CONDA_PYTHON_VERSION io3d
+  - conda create --yes -n travis pip nose python=$CONDA_PYTHON_VERSION io3d SimpleITK
   - source activate travis
   - export PYTHON=`which python`
   - julia -e 'using Pkg; Pkg.build("PyCall")'
