@@ -10,7 +10,7 @@ Read 3D data from file. Data are stored int dictionary with keys "data3d" and "v
 """
 function read3d(fn)
     pyio3d = pyimport("io3d")
-    return pyio3d["read"](fn);
+    return pyio3d["read"](fn; dataplus_format=true);
 end
 
 function datasets_join_path(pth)
