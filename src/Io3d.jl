@@ -13,6 +13,13 @@ function read3d(fn)
     return pyio3d["read"](fn; dataplus_format=true);
 end
 
+"""
+Read 3D data from file. Data are stored int dictionary with keys "data3d" and "voxelsize_mm".
+"""
+function read(fn)
+    return read3d(fn)
+end
+
 function datasets_join_path(pth)
     pyio3d_datasets = pyimport("io3d.datasets")
     opth = pyio3d_datasets["join_path"](pth, get_root=true)

@@ -16,7 +16,7 @@ conda install -c mjirik -c conda-forge -c SimpleITK io3d
 which python
 ```
 
-In Julia 
+In Julia
 
 ```julia
 ENV["PYTHON"] = "/home/mirjirik/space/conda-env/julia/bin/python"
@@ -30,6 +30,6 @@ using Io3d
 ```julia
 using Io3d
 Io3d.datasets_download("nrn4")
-Io3d.read(Io3d.datasets_join_path("medical/orig/sample_data/nrn4.pklz"))
+datap = Io3d.read3d(Io3d.datasets_join_path("medical/orig/sample-data/nrn4.pklz"))
+seg = data["data3d"] .> 4000
 ```
-
