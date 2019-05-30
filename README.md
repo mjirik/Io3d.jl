@@ -13,6 +13,23 @@ Install `io3d` for Python. In command line use:
 ```bash
 conda install -c mjirik -c conda-forge -c SimpleITK io3d
 
+which python
 ```
 
 In Julia 
+
+```julia
+ENV["PYTHON"] = "/home/mirjirik/space/conda-env/julia/bin/python"
+] add https://github.com/mjirik/Io3d.jl
+using Io3d
+```
+
+
+# Test
+
+```julia
+using Io3d
+Io3d.datasets_download("nrn4")
+Io3d.read(Io3d.datasets_join_path("medical/orig/sample_data/nrn4.pklz"))
+```
+
