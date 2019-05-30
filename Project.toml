@@ -1,7 +1,7 @@
 name = "Io3d"
 uuid = "276a7f50-ef14-5ff6-a3e3-20ef51d5e3d7"
 authors = ["Miroslav Jirik <miroslav.jirik@gmail.com>"]
-version = "0.2.0"
+version = "0.3.0"
 
 [deps]
 PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
