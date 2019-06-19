@@ -10,7 +10,7 @@ Read 3D data from file. Data are stored int dictionary with keys "data3d" and "v
 """
 function read3d(fn)
     pyio3d = pyimport("io3d")
-    return pyio3d["read"](fn; dataplus_format=true);
+    return pyio3d."read"(fn; dataplus_format=true);
 end
 
 """
@@ -22,7 +22,7 @@ end
 
 function datasets_join_path(pth)
     pyio3d_datasets = pyimport("io3d.datasets")
-    opth = pyio3d_datasets["join_path"](pth, get_root=true)
+    opth = pyio3d_datasets."join_path"(pth, get_root=true)
     return opth
 end
 
@@ -32,7 +32,7 @@ Download test data based on input label. Available labels can be list by get_lab
 function datasets_download(label)
     pyio3d_datasets = pyimport("io3d.datasets")
 #     print(pth)
-    pyio3d_datasets["download"](label)
+    pyio3d_datasets."download"(label)
 end
 
 """
@@ -40,7 +40,7 @@ Write data into file. Data have to be in dict with labels "data3d" and "voxelsiz
 """
 function write3d(arr, fn)
     pyio3d = pyimport("io3d")
-    return pyio3d["write"](arr, fn);
+    return pyio3d."write"(arr, fn);
 #     print(pth)
 end
 
@@ -50,7 +50,7 @@ Get list of available datasets labels.
 """
 function get_labels()
     pyio3d_datasets = pyimport("io3d.datasets")
-    labels = pyio3d_datasets["get_labels"]()
+    labels = pyio3d_datasets."get_labels".()
     return labels
 end
 
