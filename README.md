@@ -33,3 +33,10 @@ Io3d.datasets_download("nrn4")
 datap = Io3d.read3d(Io3d.datasets_join_path("medical/orig/sample-data/nrn4.pklz"))
 seg = data["data3d"] .> 4000
 ```
+
+# Get labels
+
+```julia
+using Io3d
+Io3d.get_labels()
+```
