@@ -5,7 +5,7 @@ using Test
 
     @test "nrn4" in Io3d.get_labels()
     Io3d.datasets_download("nrn4")
-    pth = Io3d.datasets_join_path("medical/orig/sample-data/nrn4.pklz")
+    pth = Io3d.datasets_join_path("medical/orig/sample_data/nrn4.pklz")
     @test length(pth) > 0
     datap = Io3d.read3d(pth)
     data3d = datap["data3d"]
@@ -22,7 +22,7 @@ using Test
 end
 
 @testset "test read" begin
-    pth = Io3d.datasets_join_path("medical/orig/sample-data/nrn4.pklz")
+    pth = Io3d.datasets_join_path("medical/orig/sample_data/nrn4.pklz")
     datap = Io3d.read3d(pth)
 
     data3d = datap["data3d"]
