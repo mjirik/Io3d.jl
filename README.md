@@ -36,6 +36,8 @@ seg = data["data3d"] .> 4000
 
 # Get labels
 
+List of all available labels for `dataset_download` function can be obtained by fallowing command.
+
 ```julia
 using Io3d
 Io3d.get_labels()
