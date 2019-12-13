@@ -30,6 +30,15 @@ using Io3d
 ```julia
 using Io3d
 Io3d.datasets_download("nrn4")
-datap = Io3d.read3d(Io3d.datasets_join_path("medical/orig/sample-data/nrn4.pklz"))
+datap = Io3d.read3d(Io3d.datasets_join_path("medical/orig/sample_data/nrn4.pklz"))
 seg = data["data3d"] .> 4000
+```
+
+# Get labels
+
+List of all available labels for `dataset_download` function can be obtained by fallowing command.
+
+```julia
+using Io3d
+Io3d.get_labels()
 ```
