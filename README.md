@@ -4,7 +4,12 @@
 [![Coveralls](https://coveralls.io/repos/github/mjirik/Io3dP.jl/badge.svg?branch=master)](https://coveralls.io/github/mjirik/Io3dP.jl?branch=master)
 
 
-Wrapper for python `Io3d` package.
+Wrapper for python `io3d` package.
+
+Package is used to read 3D data from various file formats like DICOM, tiff.
+There is also support for open datasets download and organization datasets in
+data directory.
+
 
 
 # Install
