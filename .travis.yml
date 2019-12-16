@@ -42,6 +42,7 @@ install:
   - conda create --yes -n travis pip nose python=$CONDA_PYTHON_VERSION Io3d SimpleITK
   - source activate travis
   - export PYTHON=`which python`
+  - python -c "import io3d"
   - julia -e 'using Pkg; Pkg.build("PyCall")'
 
 after_success:
