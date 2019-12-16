@@ -1,4 +1,4 @@
-module Io3d
+module Io3dP
 using PyCall
 
 greet() = print("Hello World!")
@@ -9,8 +9,8 @@ greet() = print("Hello World!")
 Read 3D data from file. Data are stored int dictionary with keys "data3d" and "voxelsize_mm".
 """
 function read3d(fn)
-    pyio3d = pyimport("io3d")
-    return pyio3d."read"(fn; dataplus_format=true);
+    pyIo3dP = pyimport("Io3dP")
+    return pyIo3dP."read"(fn; dataplus_format=true);
 end
 
 """
@@ -21,8 +21,8 @@ function read(fn)
 end
 
 function datasets_join_path(pth)
-    pyio3d_datasets = pyimport("io3d.datasets")
-    opth = pyio3d_datasets."join_path"(pth, get_root=true)
+    pyIo3dP_datasets = pyimport("Io3dP.datasets")
+    opth = pyIo3dP_datasets."join_path"(pth, get_root=true)
     return opth
 end
 
@@ -30,17 +30,17 @@ end
 Download test data based on input label. Available labels can be list by get_labels()
 """
 function datasets_download(label)
-    pyio3d_datasets = pyimport("io3d.datasets")
+    pyIo3dP_datasets = pyimport("Io3dP.datasets")
 #     print(pth)
-    pyio3d_datasets."download"(label)
+    pyIo3dP_datasets."download"(label)
 end
 
 """
 Write data into file. Data have to be in dict with labels "data3d" and "voxelsize_mm".
 """
 function write3d(arr, fn)
-    pyio3d = pyimport("io3d")
-    return pyio3d."write"(arr, fn);
+    pyIo3dP = pyimport("Io3dP")
+    return pyIo3dP."write"(arr, fn);
 #     print(pth)
 end
 
@@ -49,8 +49,8 @@ end
 Get list of available datasets labels.
 """
 function get_labels()
-    pyio3d_datasets = pyimport("io3d.datasets")
-    labels = pyio3d_datasets."get_labels".()
+    pyIo3dP_datasets = pyimport("Io3dP.datasets")
+    labels = pyIo3dP_datasets."get_labels".()
     return labels
 end
 

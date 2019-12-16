@@ -1,17 +1,17 @@
-# Io3d
+# Io3dP
 
-[![Build Status](https://travis-ci.org/mjirik/Io3d.jl.svg?branch=master)](https://travis-ci.org/mjirik/Io3d.jl)
-[![Coveralls](https://coveralls.io/repos/github/mjirik/Io3d.jl/badge.svg?branch=master)](https://coveralls.io/github/mjirik/Io3d.jl?branch=master)
+[![Build Status](https://travis-ci.org/mjirik/Io3dP.jl.svg?branch=master)](https://travis-ci.org/mjirik/Io3dP.jl)
+[![Coveralls](https://coveralls.io/repos/github/mjirik/Io3dP.jl/badge.svg?branch=master)](https://coveralls.io/github/mjirik/Io3dP.jl?branch=master)
 
 
-Wrapper for pytho `io3d` package.
+Wrapper for pytho `Io3dP` package.
 
 
 # Install
 
-Install `io3d` for Python. In command line use:
+Install `Io3dP` for Python. In command line use:
 ```bash
-conda install -c mjirik -c conda-forge -c SimpleITK io3d
+conda install -c mjirik -c conda-forge -c SimpleITK Io3dP
 
 which python
 ```
@@ -20,17 +20,17 @@ In Julia
 
 ```julia
 ENV["PYTHON"] = "/home/mirjirik/space/conda-env/julia/bin/python"
-] add https://github.com/mjirik/Io3d.jl
-using Io3d
+] add https://github.com/mjirik/Io3dP.jl
+using Io3dP
 ```
 
 
 # Test
 
 ```julia
-using Io3d
-Io3d.datasets_download("nrn4")
-datap = Io3d.read3d(Io3d.datasets_join_path("medical/orig/sample_data/nrn4.pklz"))
+using Io3dP
+Io3dP.datasets_download("nrn4")
+datap = Io3dP.read3d(Io3dP.datasets_join_path("medical/orig/sample_data/nrn4.pklz"))
 seg = data["data3d"] .> 4000
 ```
 
@@ -39,6 +39,6 @@ seg = data["data3d"] .> 4000
 List of all available labels for `dataset_download` function can be obtained by fallowing command.
 
 ```julia
-using Io3d
-Io3d.get_labels()
+using Io3dP
+Io3dP.get_labels()
 ```
