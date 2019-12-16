@@ -11,7 +11,6 @@ There is also support for open datasets download and organization datasets in
 data directory.
 
 
-
 # Install
 
 Install `Io3d` for Python. In command line use:
