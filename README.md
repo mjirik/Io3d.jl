@@ -20,6 +20,8 @@ In Julia
 
 ```julia
 ENV["PYTHON"] = "/home/mirjirik/space/conda-env/julia/bin/python"
+] add PyCall
+] build PyCall
 ] add https://github.com/mjirik/Io3dP.jl
 using Io3dP
 ```
