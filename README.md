@@ -4,14 +4,14 @@
 [![Coveralls](https://coveralls.io/repos/github/mjirik/Io3dP.jl/badge.svg?branch=master)](https://coveralls.io/github/mjirik/Io3dP.jl?branch=master)
 
 
-Wrapper for pytho `Io3dP` package.
+Wrapper for python `Io3d` package.
 
 
 # Install
 
-Install `Io3dP` for Python. In command line use:
+Install `Io3d` for Python. In command line use:
 ```bash
-conda install -c mjirik -c conda-forge -c SimpleITK Io3dP
+conda install -c mjirik -c conda-forge -c SimpleITK Io3d
 
 which python
 ```
