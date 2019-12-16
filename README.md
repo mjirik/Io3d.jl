@@ -1,7 +1,7 @@
-# Io3dP
+# Pio3d
 
-[![Build Status](https://travis-ci.org/mjirik/Io3dP.jl.svg?branch=master)](https://travis-ci.org/mjirik/Io3dP.jl)
-[![Coveralls](https://coveralls.io/repos/github/mjirik/Io3dP.jl/badge.svg?branch=master)](https://coveralls.io/github/mjirik/Io3dP.jl?branch=master)
+[![Build Status](https://travis-ci.org/mjirik/Pio3d.jl.svg?branch=master)](https://travis-ci.org/mjirik/Pio3d.jl)
+[![Coveralls](https://coveralls.io/repos/github/mjirik/Pio3d.jl/badge.svg?branch=master)](https://coveralls.io/github/mjirik/Pio3d.jl?branch=master)
 
 
 Wrapper for python `io3d` package.
@@ -27,17 +27,17 @@ In Julia
 ENV["PYTHON"] = "/home/mirjirik/space/conda-env/julia/bin/python"
 ] add PyCall
 ] build PyCall
-] add https://github.com/mjirik/Io3dP.jl
-using Io3dP
+] add https://github.com/mjirik/Pio3d.jl
+using Pio3d
 ```
 
 
 # Test
 
 ```julia
-using Io3dP
-Io3dP.datasets_download("nrn4")
-datap = Io3dP.read3d(Io3dP.datasets_join_path("medical/orig/sample_data/nrn4.pklz"))
+using Pio3d
+Pio3d.datasets_download("nrn4")
+datap = Pio3d.read3d(Pio3d.datasets_join_path("medical/orig/sample_data/nrn4.pklz"))
 seg = data["data3d"] .> 4000
 ```
 
@@ -46,6 +46,6 @@ seg = data["data3d"] .> 4000
 List of all available labels for `dataset_download` function can be obtained by fallowing command.
 
 ```julia
-using Io3dP
-Io3dP.get_labels()
+using Pio3d
+Pio3d.get_labels()
 ```

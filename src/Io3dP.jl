@@ -1,4 +1,4 @@
-module Io3dP
+module Pio3d
 using PyCall
 
 greet() = print("Hello World!")
